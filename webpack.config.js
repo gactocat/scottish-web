@@ -16,6 +16,11 @@ module.exports = {
         test: /\.css$/,
         loader: "style!css",
       },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      },
     ]
   }
 }
