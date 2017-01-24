@@ -1,34 +1,36 @@
 module.exports = {
   entry: {
-    html: "./src/index.html",
-    jsx: "./src/index.jsx",
+    html: './src/index.html',
+    jsx: './src/index.jsx',
   },
   output: {
-    path: __dirname + "/dist",
-    filename: "bundle.js",
+    path: __dirname + '/dist',
+    filename: 'bundle.js',
   },
+
   module: {
     preLoaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: "eslint-loader"
+      loader: 'eslint-loader',
     }],
-
-    loaders: [{
+    loaders: [
+      {
         test: /\.html$/,
-        loader: "file?name=[name].[ext]",
+        loader: 'file?name=[name].[ext]',
       },
       {
         test: /\.css$/,
-        loader: "style!css",
+        loader: 'style!css',
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: 'babel-loader',
       },
-    ]
-  }
+    ],
+  },
+
   eslint: {
     configFile: './.eslintrc',
   },
